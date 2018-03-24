@@ -1,0 +1,93 @@
+\section{Method}
+
+
+\subsection{Cylindrical capacitor}
+The capacitance of a cylindrical capacitor is described by:
+
+\begin{eqnarray}
+C_{cc} = \frac{2\pi h \varepsilon_0}{\ln(b/a)}
+\label{eq:cylindrical_capacitor}
+\end{eqnarray}
+where $\varepsilon_0$ is the dielectric permittivity of air, $h$ is the axial length of active screen, $a$ and $b$ are the radius of measuring electrodes and active screen, respectively.
+
+
+
+Therefore, it can be assumed that
+
+\begin{eqnarray}
+C_{d1}&=&C_{d2}=\cdots=C_{di}\\
+C_{cc}&=&\sum_{i=1}^{n_E} C_{di}
+\label{eq:cd}
+\end{eqnarray}
+where $C_{di}$ is the capacitance between the $i^{th}$ measuring electrode  and the active screen.
+
+In consideration of the gaps between measuring electrodes and radial screens and the edge effect caused by finite $h$, $C_{di}$  can be estimated by:
+
+\begin{eqnarray}
+C_{di} = k_c\frac{C_{cc}}{n_E}=\frac{2k\pi h \varepsilon_0}{\ln(b/a)n_E}
+\label{eq:cna}
+\end{eqnarray}
+where $k_c$ is a correction factor related to sensor geometry, $n_E$ is the number of measuring electrodes.
+
+\subsection{Circuit output}
+
+
+Therefore, the output voltage can be described by:
+
+\begin{eqnarray}
+V_o(t) = -\frac{j\omega R_f(C_m - kC_{d2})}{j\omega C_f R_f +1}V_i(t)
+\label{eq:voa}
+\end{eqnarray}
+where $\omega$ is the applied angular frequency, $R_f$ and $C_f$ are the feedback resistor and capacitor.
+
+By introducing $k_0 = {j\omega R_f}/(j\omega C_f R_f +1)$, Eq(\ref{eq:voa}) can be simplified into:
+
+\begin{eqnarray}
+V_o(t) =-k_0(C_m - kC_{d2})V_i(t)
+\label{eq:vob}
+\end{eqnarray}
+
+
+\subsection{Noise analysis}
+
+
+In consideration that
+\begin{eqnarray}
+|j\omega R_{s3}(C_m+C_d+C_{s3}+C_{s4})| &\ll&1,\nonumber\\
+|j\omega R_{s4}(C_m+C_d+C_{s3}+C_{s4})| &\ll&1,\nonumber\\
+|j\omega R_fC_f| &\gg&1\nonumber
+\label{eq:approx_cond}
+\end{eqnarray}
+the equations for noise gains can be properly simplified.
+
+The total RMS noise can be expressed by
+
+\begin{eqnarray}
+E_{t} = \sqrt{\sum_{i=1}^{q} E_{n}^2(i)}[V_{RMS}]
+\label{eq:vrms_sum}
+\end{eqnarray}
+where $E_{n}(i)$ represents the $i^{th}$ RMS noise source, \textit{i.e.} the passive elements and the intrinsic noise sources in the op-amp.
+
+Each noise source generates a noise density at the inverting or non-inverting input of the op-amp, which can be  calculated by:
+
+\begin{eqnarray}
+E_n = \sqrt{\int_{0}^{\omega_c}|A_n(\omega)|^2 e_{n}^{2}(\omega)d \omega}[V_{RMS}]
+\label{eq:vrms}
+\end{eqnarray}
+where $A_n(\omega)$ is the noise gain, $\omega_c$ is the cut-off frequency of the following conditioning circuit.
+
+\subsection{Sensitivity distribution}
+
+In ECT, the sensitivity distribution of electrode pair $(i, j)$ $\mathbf{S}_{i,j}(k)$ is defined as:
+
+\begin{eqnarray}
+\mathbf{S}_{i,j}(k)=\mu (k)\frac{C_{i,j}(k)-C_{i,j}^l}{\Delta C_{i,j}\Delta \varepsilon}
+\label{eq:sensitivity}
+\end{eqnarray}
+where
+\begin{eqnarray}
+\Delta C_{i,j} &=&C_{i,j}^h-C_{i,j}^l\\
+\Delta \varepsilon &=&\varepsilon^h-\varepsilon^l
+\label{eq:sensitivity2}
+\end{eqnarray}
+and where $C_{i,j}(k)$ is the capacitance when the $k^{th}$ element has the high dielectric constant $\varepsilon^h$ and all the other elements have low dielectric constant $\varepsilon^l$. And $C_{i,j}^h$ and $C_{i,j}^l$ are the capacitances when the pipe is filled with  high and low permittivity materials, respectively. $\Delta C_{i,j}$ is, therefore, the full scale capacitance range.
