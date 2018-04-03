@@ -29,6 +29,47 @@
 
 在\verb+\preface\cover.tex+文件中，可修改报告题目及作者姓名。
 
+\subsection{参考文献：\LaTeX、BibTeX 与Jabref配合使用}
+
+
+\LaTeX 、BibTeX与Jabref配合使用，可方便的写出格式非常漂亮的论文、报告，甚至学位论文。
+
+\begin{description}
+  \item[\LaTeX] 可Google或百度，常用的编写软件有CTex套装、TexLive、TexStudio等。
+  \item[BibTex] 是LaTex的一个组件，用于文献引用。其中，.bib是文献引用信息文件。
+  \item[Jabref] 用于管理BibTex的一个软件，跨平台。
+\end{description}
+
+\subsection{文献管理}
+长期积累下来，参考文献的数量是非常可观的，单靠人的记忆力显然不够。借助文献管理软件，可以很好的解决这个问题。推荐两个：ENDNOTE和Jabref，网上有很多教程。
+
+Jabref和 \LaTeX 配合的很好。
+
+以前的做法是：每篇论文建个文件夹，放tex文件，以及图片、引用的论文 和bib（参考文献列表）等。问题是，同一篇参考文献可能要会在不同的论文中引用， 每次引用Copy一份bib文件，在管理上 很不方便。
+
+给大家推荐一种方法：
+
+\begin{enumerate}
+  \item 规划一个写论文专用的文件夹，用于存所有tex文件（以及tex相关的cls文件）、图片（有的图片也可能会重复使用）、参考文献（bib、bst文件，及pdf）等，例如我用c:/local；
+  \item 在此文件夹下，可新建ref、fig、bib等子文件夹，分别存放上述文件；
+  \item 当开始一篇新文章A时，在其他地方新建一个文件夹：20180101\_A，放上Tex源文件；
+  \item 在tex文件中需要插入文献/图片时，把c:/local 同时加进去，见下例。
+\end{enumerate}
+
+\begin{verbatim}
+\documentclass[twoside]{c:/local/linux_thesis}  %引用cls模板
+...
+\graphicspath{{c:/local/fig/}}                  %图片文件夹
+...
+\biblilographystyle{c:/local/IEEEtran}          %使用参考文献格式，IEEEtran.bst
+\bibliography{c:/local/bib}                     %插入参考文献列表，bib.bib
+\end{verbatim}
+
+这样管理参考文献和图片，可以避免硬盘中存在多个文件版本，也方便写毕业论文使用。
+
+注：在本模板的根目录下，存有一个bib.bib文件。
+
+
 
 \section{图表}
 \subsection{图片的插入方法}
@@ -77,11 +118,11 @@
 
 
 
-\section{普通表格的绘制方法}
+\section{表格}
 
-表格应具有三线表格式，因此需要调用~booktabs~宏包，其标准格式如表~\ref{tab:table1}~所示。
+表格应具有三线表格式，因此需要调用~booktabs~宏包，其标准格式如表~\ref{tab:ch1:tab1}~所示。
 \begin{table}[htbp]
-\caption{符合本科生毕业论文绘图规范的表格}\label{tab:table1}
+\caption{三线制表格}\label{tab:ch1:tab1}
 \vspace{0.5em}\centering\wuhao
 \begin{tabular}{ccccc}
 \toprule[1.5pt]
@@ -94,11 +135,6 @@ $D$(in) & $P_u$(lbs) & $u_u$(in) & $\beta$ & $G_f$(psi.in)\\
 10 & 421.0 & 0.001035 & 3.59 & 0.04089\\
 20 & 640.2 & 0.001565 & 7.18 & 0.04089\\
  5 & 269.8 & 0.000674 & 1.79 & 0.04089\\
-10 & 421.0 & 0.001035 & 3.59 & 0.04089\\
-20 & 640.2 & 0.001565 & 7.18 & 0.04089\\
- 5 & 269.8 & 0.000674 & 1.79 & 0.04089\\
-10 & 421.0 & 0.001035 & 3.59 & 0.04089\\
-20 & 640.2 & 0.001565 & 7.18 & 0.04089\\
 \bottomrule[1.5pt]
 \end{tabular}
 \vspace{\baselineskip}
