@@ -1,0 +1,106 @@
+
+\textcolor[rgb]{0.00,0.07,1.00}{注意：研究生平时撰写报告应遵循学术论文的一般写作规范，而不是敷衍导师。这样做的优势是：每一份报告都将成为你毕业论文的章/节。
+}
+\section{使用报告模板}
+\subsection{报告撰写}
+
+在根目录下，包括两个主文件：
+\begin{verbatim}
+   draft_en.tex：使用IEEE期刊格式，用于撰写英文报告；
+   draft_cn.tex：使用天津大学学位论文格式，用于撰写中文报告。
+\end{verbatim}
+
+其中都包含以下类似语句：
+
+\begin{verbatim}
+  \input{sec_method}
+\end{verbatim}
+
+其功能是将此文件包含入主文件内。
+在使用过程中，直接编辑文件\verb+sec_method.tex+中的内容，再利用pdflatex功能编译主文件即可生成：
+\begin{verbatim}
+   draft_en.pdf：英文报告；
+   draft_cn.pdf：中文报告。
+\end{verbatim}
+
+可根据需要，将pdf报告提交给导师。
+
+\subsection{修改题目及作者姓名}
+
+在\verb+\preface\cover.tex+文件中，可修改报告题目及作者姓名。
+
+
+\section{图表}
+\subsection{图片的插入方法}
+单张图片独自占一行的插入形式如图~\ref{fig:dect_12}~所示。
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.4\textwidth]{ect_12.mps}
+\caption{12电极ECT传感器}\label{fig:dect_12}
+\vspace{\baselineskip}
+\end{figure}
+
+
+
+若需要将~2~张及以上的图片并排插入到一行中，则需要采用\verb|minipage|环境，如图~\ref{fig:ect}~和图~\ref{fig:dect}~所示。
+\begin{figure}[htbp]
+\centering
+\begin{minipage}{0.4\textwidth}
+\centering
+\includegraphics[width=\textwidth]{ect_12.mps}
+\caption{非差分ECT}\label{fig:ect}
+\end{minipage}
+\hspace{0.1\textwidth}
+\begin{minipage}{0.4\textwidth}
+\centering
+\includegraphics[width=\textwidth]{dect_12.mps}
+\caption{差分ECT}\label{fig:dect}
+\end{minipage}
+\vspace{\baselineskip}
+\end{figure}
+  
+
+\subsection{具有子图的图片插入方法}
+
+图中若含有子图时，需要调用~subfigure~宏包, 如图~\ref{fig:subfig}~所示。
+\begin{figure}[htbp]
+  \centering
+  \subfigure[非差分ECT]{\label{fig:subfig:datadim}
+                \includegraphics[width=0.4\textwidth]{ect_12.mps}}
+  \subfigure[差分ECT]{\label{fig:subfig:datasize}
+                \includegraphics[width=0.4\textwidth]{dect_12.mps}}
+  \caption{ECT传感器结构}\label{fig:subfig}
+\vspace{\baselineskip}
+\end{figure}
+
+若想获得插图方法的更多信息，参见网络上的~\href{ftp://ftp.tex.ac.uk/tex-archive/info/epslatex.pdf}{Using Imported Graphics in \LaTeX and pdf\LaTeX}~文档。 
+
+
+
+\section{普通表格的绘制方法}
+
+表格应具有三线表格式，因此需要调用~booktabs~宏包，其标准格式如表~\ref{tab:table1}~所示。
+\begin{table}[htbp]
+\caption{符合本科生毕业论文绘图规范的表格}\label{tab:table1}
+\vspace{0.5em}\centering\wuhao
+\begin{tabular}{ccccc}
+\toprule[1.5pt]
+$D$(in) & $P_u$(lbs) & $u_u$(in) & $\beta$ & $G_f$(psi.in)\\
+\midrule[1pt]
+ 5 & 269.8 & 0.000674 & 1.79 & 0.04089\\
+10 & 421.0 & 0.001035 & 3.59 & 0.04089\\
+20 & 640.2 & 0.001565 & 7.18 & 0.04089\\
+ 5 & 269.8 & 0.000674 & 1.79 & 0.04089\\
+10 & 421.0 & 0.001035 & 3.59 & 0.04089\\
+20 & 640.2 & 0.001565 & 7.18 & 0.04089\\
+ 5 & 269.8 & 0.000674 & 1.79 & 0.04089\\
+10 & 421.0 & 0.001035 & 3.59 & 0.04089\\
+20 & 640.2 & 0.001565 & 7.18 & 0.04089\\
+ 5 & 269.8 & 0.000674 & 1.79 & 0.04089\\
+10 & 421.0 & 0.001035 & 3.59 & 0.04089\\
+20 & 640.2 & 0.001565 & 7.18 & 0.04089\\
+\bottomrule[1.5pt]
+\end{tabular}
+\vspace{\baselineskip}
+\end{table}
+

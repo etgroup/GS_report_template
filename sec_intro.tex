@@ -1,0 +1,64 @@
+\section{前言}
+
+电容测量可分为两种情况：浮地电容和接地电容的测量。浮地电容是指电容两端不具备特定电势，测量相对容易，有多种可选的测量电路，都具备抗杂散电容的能力。如ECT中的电容测量就是典型的浮地电容测量。各电极可根据测量需要施加特定电势或进行接地处理。接地电容指电容的一端接地。由于杂散电容多是对地电容，其直接与接地电容并联；如果无法有效区别被测接地电容与杂散电容，那么抗杂散电容能力也就无从谈起。对地电容的测量无法使用一般的电容测量仪器进行直接测量。如LCR表、阻抗分析仪都需要将其阻抗两端接入其测量端口，施加特定的电势。接地电容，或受条件限制，或受传感器原理限制，无法提供浮置选项。
+
+浮地电容的检测已经有很多成熟的测量电路，如直流充放电电路【﻿﻿@季寒﻿﻿ S. M. Huang，Charge/discharge ... 】、交流充放电电路【】【﻿﻿@季寒﻿﻿ W. Q. Yang, New AC based...】、谐振电路【﻿﻿@季寒﻿﻿ 】等，且都具备抗杂散电容的能力。
+
+在一些应用中，如针对导电溶液的电容式液位计、液膜厚度测量仪等，电容器的一端实际上就是导电溶液。由于导电溶液多通过金属容器壁与大地相连，致使这类传感器只能做为接地电容。为此，发展出一些针对接地电容的测量方法与电路，如【﻿﻿@季寒﻿﻿ 检索英文文献】
+
+\section{方法}
+\subsection{基本原理}
+
+【﻿﻿@季寒﻿﻿ 结合原理框图，说明方法。】
+
+此处，原理框图只包含最少的要素：1、非理想电流源（由理想电流源与输出阻抗构成）；2、被测接地电容Cx；3、与Cx并联的杂散电容Cp。
+图1 基于电流源的接地电容测量方法
+
+【﻿﻿@季寒﻿﻿ 给出公式，电路输出值与被测电容之间的关系。】
+
+
+\subsection{电流源}
+【采用电路原理图和公式描述可用的VCCS电路】
+
+Howland 型
+改进的Howland型
+CCII型
+【A wide-band AC-coupled current source for electrical impedance tomography】
+
+\subsection{电缆屏蔽}
+引用图1，进一步说明电缆屏蔽的必要性。
+
+
+\section{结果}
+\subsection{电路仿真结果}
+电路仿真软件给出仿真数据及信号图。
+
+\subsection{实验结果}
+结合实验给出测量结果。这里，我们可以：
+用液位计构建一个液位与电容成正比的电容器，作为研究目标；
+使用同轴电缆（100 pF/m）作为被测电容。
+注意：常用的贴片电容，精度为10~20%，不可作为比对标准。
+
+
+
+\section{讨论}
+
+\section{结论}
+
+
+
+
+
+
+
+参考文献
+﻿﻿@季寒﻿﻿ 以下及文中提到的文献，保存到Jabref，备用。
+
+A novel interface circuit for grounded capacitive sensors with feedforward-based active shielding
+
+A simple analog front-end circuit for grounded capacitive sensors with offset capacitance
+
+Liquid-level measurement system based on a remote grounded capacitive sensor
+
+Comparison of three current sources for single-electrode capacitance measurement
+
