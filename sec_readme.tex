@@ -1,6 +1,5 @@
 
-\textcolor[rgb]{0.00,0.07,1.00}{注意：研究生平时撰写报告应遵循学术论文的一般写作规范，而不是敷衍导师。这样做的优势是：每一份报告都将成为你毕业论文的章/节。
-}
+\textbf{注意：研究生平时撰写报告应遵循学术论文的一般写作规范，而不是敷衍导师。这样做的优势是：每一份报告都将成为你毕业论文的章/节。}
 \section{使用报告模板}
 \subsection{报告撰写}
 
@@ -104,6 +103,8 @@ Jabref和 \LaTeX 配合的很好。
 \subsection{具有子图的图片插入方法}
 
 图中若含有子图时，需要调用~subfigure~宏包, 如图~\ref{fig:subfig}~所示。
+
+\begin{verbatim}
 \begin{figure}[htbp]
   \centering
   \subfigure[非差分ECT]{\label{fig:subfig:datadim}
@@ -113,14 +114,17 @@ Jabref和 \LaTeX 配合的很好。
   \caption{ECT传感器结构}\label{fig:subfig}
 \vspace{\baselineskip}
 \end{figure}
+\end{verbatim}
 
-若想获得插图方法的更多信息，参见网络上的~\href{ftp://ftp.tex.ac.uk/tex-archive/info/epslatex.pdf}{Using Imported Graphics in \LaTeX and pdf\LaTeX}~文档。
+%若想获得插图方法的更多信息，参见网络上的~\href{ftp://ftp.tex.ac.uk/tex-archive/info/epslatex.pdf}{Using Imported Graphics in \LaTeX and pdf\LaTeX}~文档。
 
 
 
 \section{表格}
 
 表格应具有三线表格式，因此需要调用~booktabs~宏包，其标准格式如表~\ref{tab:ch1:tab1}~所示。
+
+\begin{verbatim}
 \begin{table}[htbp]
 \caption{三线制表格}\label{tab:ch1:tab1}
 \vspace{0.5em}\centering\wuhao
@@ -139,4 +143,5 @@ $D$(in) & $P_u$(lbs) & $u_u$(in) & $\beta$ & $G_f$(psi.in)\\
 \end{tabular}
 \vspace{\baselineskip}
 \end{table}
+\end{verbatim}
 

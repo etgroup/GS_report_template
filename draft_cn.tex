@@ -4,10 +4,12 @@
 \documentclass[12pt,openright,twoside]{book}
 \AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{only_foot}}} %强制目录页的第一页的页眉页脚样式
 
+
+
 \input{setup/package}                      % 定义本文所使用宏包
 \graphicspath{{fig/}}                  % 定义所有的.eps 文件在figures子目录下
 \begin{document}                           % 开始全文
-\begin{CJK*}{UTF8}{song}                   % 开始中文字体使用
+\begin{CJK*}{UTF8}{song}                   % 开始中文字体使用. 
 \input{setup/format}                       % 完成对论文各个部分格式的设置
 \frontmatter                               % 以下是论文导言部分，包括论文的封面，中英文摘要和中文目录
 \input{preface/cover}                      % 封面
